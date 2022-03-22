@@ -1,12 +1,13 @@
 module App.BasicComponent where
 
 import Prelude
+
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Events as HE
 
 -- Input
-type Input = Unit
+-- type Input = Unit
 
 -- State
 type State = Int
@@ -25,8 +26,8 @@ component =
         
         }
 
-initialState :: Input -> State
-initialState _ = 0
+initialState :: forall input. input -> State
+initialState _ = 0 
 
 handleAction :: forall output m. Action -> H.HalogenM State Action () output m Unit
 handleAction = case _ of
